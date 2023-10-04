@@ -1,0 +1,107 @@
+{% extends 'main/temp.html' %}
+
+{% block title %}Add post{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="navigation">
+    <div class="nav-bar fixed-top">
+        <button class="nav-btn">&#9776;</button>
+        <div class="nav-items">
+            <a href="/">Main page</a>
+            <a href="{% url 'main:about' %}">About us</a>
+            <a href="#cont">Contacts</a>
+            <a href="#appointment">Make an appointment</a>
+            <a href="{% url 'articles:all' %}">Articles</a>
+            {% if user.is_superuser %}
+                <a href="{% url 'articles:category' %}">Add category</a>
+            {% endif %}
+        </div>
+        <div class="nav-links">
+            <a href="#"><i class="fa-brands fa-vk" style="color: #000000;"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
+            <a href="#"><i class="fa-brands fa-square-odnoklassniki" style="color: #000000;"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="check-user">
+    <div class="register">
+        {% if not user.is_authenticated %}
+        <a class="reg" href="{% url 'users:login' %}">Sign in</a>
+        <a class="reg" href="{% url 'users:registration' %}">Sign up</a>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <a class="reg" href="{% url 'users:logout' %}">Logout</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="add-post">
+
+    <div class="container">
+        <div class="adding">
+            {% if user.is_authenticated %}
+                <h4>
+                    There is you can add a new post for this website :)
+                </h4>
+                <br>
+                <div class="post-form">
+                    <div class="form-group">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="btn btn-secondary">
+                                Add a new post
+                            </button>
+                        </form>
+                    </div>
+                {% else %}
+                    <h5>
+                        I'm sorry, but you did not sign in
+                    </h5>
+                    <br>
+                    <button>
+                        <a class="reg btn btn-secondary" href="{% url 'users:login' %}">
+                            Sign in
+                        </a>
+                    </button>
+                    <button>
+                        <a class="reg btn btn-secondary" href="{% url 'users:registration' %}">
+                            Sign up
+                        </a>
+                    </button>
+
+                    <br>
+                    <br>
+
+                    <button>
+                        <a href="{% url 'articles:all' %}" class="btn btn-secondary">
+                            All articles
+                        </a>
+                        </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="rights-info text-center mt-3">
+        <p>
+            All rights reserved 2023
+        </p>
+        <a href="#"><i class="fa-brands fa-vk" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-square-odnoklassniki" style="color: #000000;"></i></a>
+    </div>
+</div>
+
+
+{% endblock %}

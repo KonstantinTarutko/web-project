@@ -1,0 +1,120 @@
+{% extends 'main/temp.html' %}
+
+{% block title %}Our articles{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="navigation">
+    <div class="nav-bar fixed-top">
+        <button class="nav-btn">&#9776;</button>
+        <div class="nav-items">
+            <a href="/">Main page</a>
+            <a href="{% url 'main:about' %}">About us</a>
+            <a href="#cont">Contacts</a>
+            <a href="#appointment">Make an appointment</a>
+            {% if user.is_superuser %}
+                <a href="{% url 'articles:add' %}">Add post</a>
+                <a href="{% url 'articles:category' %}">Add category</a>
+            {% endif %}
+        </div>
+        <div class="nav-links">
+            <a href="#"><i class="fa-brands fa-vk" style="color: #000000;"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
+            <a href="#"><i class="fa-brands fa-square-odnoklassniki" style="color: #000000;"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="check-user">
+{% if categories_menu %}
+    <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                 data-bs-toggle="dropdown" aria-expanded="false">
+                Select category
+              </a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item"
+                               href="{% url 'articles:categories-list' %}">
+                          All categories
+                        </a></li>
+                      {% for item in categories_menu %}
+                        <li><a class="dropdown-item"
+                               href="{% url 'articles:categories' item|slugify %}">
+                            {{ item }}
+                        </a></li><br>
+                      {% endfor %}
+                  </ul>
+    </li>
+{% endif %}
+    <div class="register">
+        {% if not user.is_authenticated %}
+        <a class="reg" href="{% url 'users:login' %}">Sign in</a>
+        <a class="reg" href="{% url 'users:registration' %}">Sign up</a>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <a class="reg" href="{% url 'users:logout' %}">Logout</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="articles-list">
+    <div class="for-propose">
+        <h6>
+            Do you have article and you want to share?<br>
+            Write us and we publish it
+        </h6>
+        <button type="button" class="btn btn-secondary">
+            <a href="{% url 'articles:propose-post' %}">
+                Propose
+            </a>
+        </button><br><br>
+    </div>
+    <h4>
+        Articles
+    </h4>
+    <br>
+    <div class="list-group">
+        <ul class="main-list">
+            {% for post in object_list %}
+            <li>
+                <a href="{% url 'articles:article-detail' post.pk %}" class="list-group-item
+                list-group-item-action" aria-current="true">
+                <br>
+                    <h6>Theme: {{ post.title }}</h6>
+                    <h6>Author: {{ post.author.username }}</h6>
+                    <p class="mb-1">
+                    {{ post.body|slice:":150"|safe }}
+                    </p>
+                    <p>Date: {{ post.pub_data }}</p>
+                </a>
+                    Category: <a href="{% url 'articles:categories' post.category|slugify %}">{{ post.category }}</a>
+                <br>
+
+                {% if user.is_superuser %}
+                    <a href="{% url 'articles:edit' post.pk %}">Edit post</a>
+                    <br>
+                    <a href="{% url 'articles:delete' post.pk %}">Delete post</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="rights-info text-center mt-3">
+        <p>
+            All rights reserved 2023
+        </p>
+        <a href="#"><i class="fa-brands fa-vk" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-square-odnoklassniki" style="color: #000000;"></i></a>
+    </div>
+</div>
+
+{% endblock %}

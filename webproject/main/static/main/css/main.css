@@ -1,0 +1,408 @@
+@import url("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
+
+body {
+    background: linear-gradient(90deg, #E7C3C3 0%, #fff 100%);
+}
+
+.nav-bar {                                   /* settings for nv bar */
+    display: flex;
+    position: sticky;
+}
+
+.nav-items a, .nav-links a {                  /* display for items and links in the nav bar */
+    display: inline-block;
+    padding: 5px;
+}
+
+.nav-items {                                 /* settings for nav items */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.nav-links {                                   /* font size for links */
+    font-size: 20px;
+}
+
+.nav-bar {                                  /* fixed navbar on the top */
+    background: linear-gradient(90deg, #E7C3C3 0%, #fff 100%);
+}
+
+.nav-btn {                              /* nav button settings */
+    display: none;
+}
+
+.check-user {                           /* settings for authentication block */
+    display: flex;
+    background: linear-gradient(0deg, #d7d0d0 0%, #cebbbb 100%);
+    padding-top: 35px;
+    justify-content: right;
+}
+
+.login, .register {                        /* settings for logging */
+    display: inline-block;
+    font-size: 18px;
+    padding: 3px;
+}
+
+.login a, .register a {                     /* settings for text */
+    text-decoration: none;
+    color: black;
+    font-weight: 700px;
+}
+
+main .features {                        /* image of main block */
+        background-image: url("images/right.jpeg");
+        background-size : 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+}
+
+main .features {                        /* settings of main block */
+    color: #F7F4F2;
+    display: flex;
+    align-items: left;
+    margin-top: 5px;
+    width: 100%;
+    height: 600px;
+}
+
+main .features h3 {                       /* description what we are doing */
+    padding-top: 55px;
+    margin-left: 60px;
+}
+
+main .form form {                          /* entry form */
+    font-size: 20px;
+    display: inline-block;
+    color: black;
+    width: 200px;
+    margin-left: 600px;
+    padding-top: 220px;
+}
+
+main .form h2 {                           /* text over the entry form */
+    color: white;
+    margin-left: 500px;
+    padding-top: 30px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.text-center h1 {                          /* color of the text form */
+    color: #F7F4F2;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+label {
+    color: #333;
+}
+
+.features>.container {                     /* position of the form */
+    margin-left: 90px;
+}
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 60%;
+    margin-left: 3px;
+}
+
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+}
+
+.card {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.desc-info {                          /* background image in description */
+    background: url('https://www.thoughtco.com/thmb/-gDES1wOdCc1jIGH5PfVMd9ShyE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/therapst-Image-Source-56a449a85f9b58b7d0d62bab.jpg');
+    width: 100%;
+    height: 800px;
+    background-attachment: fixed;
+}
+
+.info-company h2 {                     /* settings of company's title */
+    padding-top: 20px;
+    padding-left: 80px;
+}
+
+.info-company p {                      /* setting of description of company */
+    padding-left: 10px;
+}
+
+.info-process h2 {                     /* settings of process title */
+    padding-top: 150px;
+    padding-left: 810px;
+}
+
+.info-process p {                      /* setting of description of process */
+    padding-left: 700px;
+}
+
+.advantages {                          /* background for info about advantages */
+    background: white;
+}
+
+.example {                             /* features of advantages */
+    padding-left: 75px;
+    margin: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+.example img {                         /* settings of examples photo */
+    width: 90px;
+}
+
+.carousel-item, .carousel-item active img {      /* settings of the carousel and inner image */
+    margin-top: 80px;
+    max-width: 350px;
+}
+
+.carousel-header, .carousel-slide {             /* position of the carousel elements and carousel title */
+    position: absolute;
+}
+
+.contacts-info {                                /* background image of the contacts */
+    background: url('https://papatext.com/wp-content/uploads/2017/03/contact.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-contacts, .social-media {                /* contacts style */
+    list-style: none;
+    line-height: 35px;
+}
+
+.contacts-info h2 {                            /* position of the contacts tittle */
+    text-align: center;
+    color: red;
+}
+
+.main-contacts {                               /* position of the main contacts */
+    padding-top: 15px;
+}
+
+.social-media {                                /* position of the social media contacts */
+    text-align: right;
+    padding-right: 150px;
+}
+
+.application {                                 /* background image of application */
+    background: url('https://www.cspfmba.ru/wp-content/uploads/2022/05/1612486346_190-p-noutbuk-na-serom-fone-242.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.application h4, .telegram h5, p {            /* position of the text (title and info about bot) */
+    padding-left: 18px;
+}
+
+.application h4 {                             /* settings of the application tittle */
+    padding-top: 10px;
+    font-weight: 800;
+}
+
+.telegram h5 {                                /* settings of the info about bot */
+    padding-top: 3px;
+    font-weight: 700;
+}
+
+.telegram p {                                 /* settings of the word: 'bot' */
+    font-weight: 700;
+}
+
+.telegram span {                              /* settings of the bot text */
+    color: #187638;
+    font-weight: 800;
+}
+
+
+/* next: settings of contacts form */
+
+.contact {
+    padding: 130px 0;
+}
+
+.contact .heading h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    margin-left: 650px;
+}
+
+.contact .heading h2 span {
+    color: #ff9100;
+}
+
+.contact .heading p {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.7;
+    color: #ff9100;
+    margin: 20px 0 60px;
+    padding: 0;
+    margin-left: 700px;
+}
+
+.contact .form-control {
+    padding: 25px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border: 0;
+    border-radius: 10px;
+    margin-left: 600px;
+}
+
+.contact button.btn {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #ff9100;
+    color: #ffffff;
+    margin-left: 600px;
+}
+
+.contact .title h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact .title p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+    line-height: 1.6;
+    margin: 0 0 40px;
+}
+
+.contact .content .info {
+    margin-top: 30px;
+}
+.contact .content .info i {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    color: #02434b;
+    margin-right: 20px;
+    text-align: center;
+    width: 20px;
+}
+.contact .content .info h4 {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.contact .content .info h4 span {
+    font-size: 13px;
+    font-weight: 300;
+    color: #999999;
+}
+
+/* end of settings contacts form */
+
+
+.rights-info a {                         /* setting of footer links */
+    font-size: 20px;
+    padding: 3px;
+}
+
+
+@media (max-width: 1000px) {
+    .nav-btn {                            /* button settings for media */
+        color: black;
+        padding-inline: 8px;
+        border: none;
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-bar a {                         /* settings of nav items and links */
+        display: none;
+    }
+
+    /* don't work
+
+    .nav-bar:hover .nav-items {
+        display: block;
+        position: absolute;
+    }
+
+    */
+}
+
+
+/* for articles */
+.article-info {
+    background-color:#e0d7d7;
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.add-post {
+    background-color:#e0d7d7;
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.articles-list {
+    background-color: #e0d7d7;
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.post-form {
+    width: 500px;
+    margin-left: 10px;
+}
+
+.main-list {
+    background-color: #e0d7d7;
+    width: 400px;
+    list-style: none;
+}
+
+.articles-list h4 {
+    margin-left: 35px;
+}
+
+.articles-list a {
+    color: black;
+}
+
+.check-user .nav-item {
+    list-style: none;
+    margin-right: 82%;
+    padding-top: 7px;
+}
+
+.for-propose h6, a {
+    text-decoration: none;
+}
+
+.for-propose {
+    margin-left: 20px;
+}
+
