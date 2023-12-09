@@ -12,7 +12,7 @@
         <div class="nav-items">
             <a href="{% url 'articles:all' %}">Articles</a>
             <a href="{% url 'main:about' %}">About us</a>
-            <a href="/#cont">Contacts</a>
+            <a href="{% url 'main:contacts' %}">Contacts</a>
             <a href="/#appointment">Make an appointment</a>
             {% if user.is_superuser %}
                 <a href="{% url 'articles:add' %}">Add post</a>
@@ -245,57 +245,14 @@
     </div>
 </div>
 
-<div class="contacts-info mt-3" id="cont">
-    <h2>
-        Contacts
-    </h2>
-    <div class="old-contacts">
-        <ul class="main-contacts">
-            <li class="old">
-                Phone number: <br>48858858588
-            </li>
-            <li class="old">
-                email: <br>30300fdkkms
-            </li>
-        </ul>
-    </div>
-    <div class="social-contacts">
-        <ul class="social-media">
-            <li class="social">
-                Telegram: <br>fjgjdlsmfs
-            </li>
-            <li class="social">
-                Instagram: <br>fjgjdlsmfsfd
-            </li>
-            <li class="social">
-                VK: <br>fjgjdlsmfsdndnskddf
-            </li>
-        </ul>
-    </div>
-</div>
-
 <div class="application mt-3" id="appointment">
-    <h4>
-        Choose the convenient way <br> for you to make an application
-    </h4>
-    <div class="telegram">
-        <h5>
-            Make an application <br>
-            via our Telegram bot <br>
-            Try it!
-        </h5>
-        <p>
-            Bot: <br>
-            <span>vottakoyvotbot <a href="#"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a></span>
-        </p>
-    </div>
     <section class="contact" id="contact">
         <div class="container">
             <div class="heading text-center">
                 <h2>Contact
                     <span> Us </span></h2>
                 <p>
-                    You can also fill the form and we will contact to you
+                    Fill the form and we will contact to you
                 </p>
             </div>
             <div class="row">

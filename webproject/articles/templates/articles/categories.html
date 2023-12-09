@@ -12,7 +12,7 @@
         <div class="nav-items">
             <a href="/">Main page</a>
             <a href="{% url 'main:about' %}">About us</a>
-            <a href="#cont">Contacts</a>
+            <a href="{% url 'main:contacts' %}">Contacts</a>
             <a href="#appointment">Make an appointment</a>
             {% if user.is_superuser %}
                 <a href="{% url 'articles:add' %}">Add post</a>

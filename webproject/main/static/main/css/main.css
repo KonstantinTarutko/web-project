@@ -58,10 +58,10 @@ body {
 }
 
 main .features {                        /* image of main block */
-        background-image: url("images/right.jpeg");
-        background-size : 100%;
-        background-repeat: no-repeat;
-        background-position: center;
+    background-image: url("images/right.jpeg");
+    background-size : 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 main .features {                        /* settings of main block */
@@ -73,7 +73,7 @@ main .features {                        /* settings of main block */
     height: 600px;
 }
 
-main .features h3 {                       /* description what we are doing */
+main .features h3 {                       /* description what we can do */
     padding-top: 55px;
     margin-left: 60px;
 }
@@ -171,6 +171,12 @@ label {
     width: 90px;
 }
 
+.main-info {
+    background: #efece9;
+    padding-bottom: 40px;
+    padding-top: 30px;
+}
+
 .carousel-item, .carousel-item active img {      /* settings of the carousel and inner image */
     margin-top: 80px;
     max-width: 350px;
@@ -180,39 +186,13 @@ label {
     position: absolute;
 }
 
-.contacts-info {                                /* background image of the contacts */
-    background: url('https://papatext.com/wp-content/uploads/2017/03/contact.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-.main-contacts, .social-media {                /* contacts style */
-    list-style: none;
-    line-height: 35px;
-}
-
-.contacts-info h2 {                            /* position of the contacts tittle */
-    text-align: center;
-    color: red;
-}
-
-.main-contacts {                               /* position of the main contacts */
-    padding-top: 15px;
-}
-
-.social-media {                                /* position of the social media contacts */
-    text-align: right;
-    padding-right: 150px;
-}
 
 .application {                                 /* background image of application */
     background: url('https://www.cspfmba.ru/wp-content/uploads/2022/05/1612486346_190-p-noutbuk-na-serom-fone-242.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.application h4, .telegram h5, p {            /* position of the text (title and info about bot) */
-    padding-left: 18px;
+    height: 1000px;
 }
 
 .application h4 {                             /* settings of the application tittle */
@@ -220,44 +200,34 @@ label {
     font-weight: 800;
 }
 
-.telegram h5 {                                /* settings of the info about bot */
-    padding-top: 3px;
-    font-weight: 700;
-}
-
-.telegram p {                                 /* settings of the word: 'bot' */
-    font-weight: 700;
-}
-
-.telegram span {                              /* settings of the bot text */
-    color: #187638;
-    font-weight: 800;
-}
-
-
 /* next: settings of contacts form */
 
 .contact {
     padding: 130px 0;
 }
 
+.contact .heading {
+    padding-left: 60px;
+    padding-top: 150px;
+}
+
 .contact .heading h2 {
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 800;
     margin: 0;
     padding: 0;
     margin-left: 650px;
 }
 
 .contact .heading h2 span {
-    color: #ff9100;
+    color: black;
 }
 
 .contact .heading p {
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 20px;
+    font-weight: 900;
     line-height: 1.7;
-    color: #ff9100;
+    color: black;
     margin: 20px 0 60px;
     padding: 0;
     margin-left: 700px;
@@ -406,3 +376,35 @@ label {
     margin-left: 20px;
 }
 
+
+/* contacts page */
+
+.contacts {
+    background-image: url("images/phone.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 1100px;
+}
+
+.contacts h2 {
+    color: #A183BD;
+}
+
+.contacts h3 {
+    color: #A183BD;
+}
+
+.contacts h4 {
+    color: #A183BD;
+}
+
+.main-text {
+    padding-left: 200px;
+    padding-top: 70px;
+}
+
+.number, .social {
+    padding-right: 1000px;
+    padding-top: 50px;
+}
