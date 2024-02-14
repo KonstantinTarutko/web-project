@@ -1,0 +1,87 @@
+{% extends 'main/temp.html' %}
+
+{% block title %}Categories{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="navigation">
+    <div class="nav-bar fixed-top">
+        <button class="nav-btn">&#9776;</button>
+        <div class="nav-items">
+            <a href="/">Main page</a>
+            <a href="{% url 'main:about' %}">About us</a>
+            <a href="{% url 'main:contacts' %}">Contacts</a>
+            <a href="/#appointment">Make an appointment</a>
+            {% if user.is_superuser %}
+            <a href="{% url 'articles:add' %}">Add post</a>
+            <a href="{% url 'articles:category' %}">Add category</a>
+            {% endif %}
+        </div>
+        <div class="nav-links">
+            <a href="#"><i class="fa-brands fa-vk" style="color: #000000;"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
+            <a href="#"><i class="fa-brands fa-square-odnoklassniki" style="color: #000000;"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="check-user">
+    {% if categories_menu %}
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false">
+            Select category
+        </a>
+        <ul class="dropdown-menu">
+            {% for item in categories_menu %}
+            <li><a class="dropdown-item"
+                   href="{% url 'articles:categories' item|slugify %}">
+                {{ item }}
+            </a></li>
+            <br>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+    <div class="register">
+        {% if not user.is_authenticated %}
+        <a class="reg" href="{% url 'users:login' %}">Sign in</a>
+        <a class="reg" href="{% url 'users:registration' %}">Sign up</a>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <a class="reg" href="{% url 'users:logout' %}">Logout</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="articles-list">
+    <h4>
+        Categories
+    </h4>
+    <br>
+    {% for item in categories_menu_list %}
+        <li><a class="dropdown-item"
+               href="{% url 'articles:categories' item|slugify %}">
+            {{ item }}
+        </a></li>
+        <br>
+    {% endfor %}
+</div>
+
+<div class="footer">
+    <div class="rights-info text-center mt-3">
+        <p>
+            All rights reserved 2023
+        </p>
+        <a href="#"><i class="fa-brands fa-vk" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-square-odnoklassniki" style="color: #000000;"></i></a>
+    </div>
+</div>
+
+{% endblock %}

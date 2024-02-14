@@ -1,0 +1,90 @@
+{% extends 'main/temp.html' %}
+
+{% block title %}Main page{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="navigation">
+    <div class="nav-bar fixed-top" id="navigation">
+        <button class="nav-btn">&#9776;</button>
+        <div class="nav-items">
+            <a href="{% url 'articles:all' %}">Articles</a>
+            <a href="{% url 'main:about' %}">About us</a>
+            <a href="/">Main page</a>
+            <a href="/#appointment">Make an appointment</a>
+            {% if user.is_superuser %}
+                <a href="{% url 'articles:add' %}">Add post</a>
+                <a href="{% url 'articles:category' %}">Add category</a>
+            {% endif %}
+        </div>
+            <div class="nav-links">
+                <a href="#"><i class="fa-brands fa-vk" style="color: #000000;"></i></a>
+                <a href="#"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
+                <a href="#"><i class="fa-brands fa-square-odnoklassniki" style="color: #000000;"></i></a>
+            </div>
+    </div>
+</div>
+
+<div class="check-user">
+    <div class="register">
+        {% if not user.is_authenticated %}
+            <a class="reg" href="{% url 'users:login' %}">Sign in</a>
+            <a class="reg" href="{% url 'users:registration' %}">Sign up</a>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            <a class="reg" href="{% url 'users:logout' %}">Logout</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="contacts">
+    <div class="col-lg-12 d-flex justify-content-center">
+        <div class="col-lg-10 d-flex justify-content-center">
+            <div class="info">
+                <div class="main-text">
+                    <h2>
+                        Our contacts
+                    </h2>
+                </div>
+                <div class="number">
+                    <h3>
+                        Phone number :</h3>
+                    <h4>0000000000 <i class="fa-solid fa-phone" style="color: #dbdbdc;"></i></h4>
+                </div>
+                    <div class="social">
+                        <div class="telegram">
+                        <h3>
+                            Telegram bot :
+                        </h3>
+                        <h4>botname <a href="#"><i class="fa-brands fa-telegram" style="color: #dbdbdc;"></i></a></h4>
+                    </div>
+                    <div class="vk">
+                        <h3>
+                            VK :
+                        </h3>
+                        <h4>name link vk <i class="fa-brands fa-vk" style="color: #dbdbdc;"></i></h4>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <div class="rights-info text-center mt-3">
+        <p>
+            All rights reserved 2023
+        </p>
+        <a href="#"><i class="fa-brands fa-vk" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
+        <a href="#"><i class="fa-brands fa-square-odnoklassniki" style="color: #000000;"></i></a>
+    </div>
+</div>
+
+{% endblock %}
