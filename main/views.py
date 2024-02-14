@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ContactForm, SecondForm
@@ -34,7 +36,7 @@ def sending_form(request):
 
             send_mail(
                 'text',
-                data,
+                json.dumps(data),
                 't7est567@yandex.ru',
                 ['tarutko.konstantin@yandex.ru'],
                 fail_silently=False
