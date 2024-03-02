@@ -13,7 +13,6 @@
             <a href="/">Main page</a>
             <a href="{% url 'articles:all' %}">Articles</a>
             <a href="{% url 'main:contacts' %}">Contacts</a>
-            <a href="/#appointment">Make an appointment</a>
             {% if user.is_superuser %}
                 <a href="{% url 'articles:add' %}">Add post</a>
                 <a href="{% url 'articles:category' %}">Add category</a>
@@ -38,6 +37,33 @@
         {% if user.is_authenticated %}
             <a class="reg" href="{% url 'users:logout' %}">Logout</a>
         {% endif %}
+    </div>
+</div>
+
+<div class="about mt-3">
+    <div class="aboutme">
+        <h4>
+        Who am I?
+        </h4> <br>
+        <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+            A, dignissimos dolor doloremque eligendi facere modi pariatur <br>
+            quae tempore? Ad, quis.
+        </h6>
+        <h6>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+            Aspernatur atque culpa, ea ex facere maiores quaerat quo rerum! <br>
+            Aut itaque labore nemo odit quibusdam voluptates.
+        </h6>
+        <h6>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+            Aspernatur atque culpa, ea ex facere maiores quaerat quo rerum! <br>
+            Aut itaque labore nemo odit quibusdam voluptates.
+        </h6>
+        <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+            A, dignissimos dolor doloremque eligendi facere modi pariatur <br>
+            quae tempore? Ad, quis.
+        </h6> <br>
+        <a href="#appointment" button type="button" class="btn btn-success">Fill the form</a>
     </div>
 </div>
 
@@ -67,48 +93,34 @@
 </div>
 
 <div class="application mt-3" id="appointment">
-    <h4>
-        Choose the convenient way <br> for you to make an application
-    </h4>
-    <div class="telegram">
-        <h5>
-            Make an application <br>
-            via our Telegram bot <br>
-            Try it!
-        </h5>
-        <p>
-            Bot: <br>
-            <span>vottakoyvotbot <a href="#"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a></span>
-        </p>
-    </div>
     <section class="contact" id="contact">
         <div class="container">
             <div class="heading text-center">
                 <h2>Contact
                     <span> Us </span></h2>
                 <p>
-                    You can also fill the form and we will contact to you
+                    Fill the form and we will contact to you
                 </p>
             </div>
             <div class="row">
-
                 <div class="col-md-7">
-                    <form>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="Name">
+                    <form method="POST" action="/">
+                        {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input name="first_name" type="text" class="form-control" placeholder="name">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input name="email" type="email" class="form-control" placeholder="email">
+                                </div>
+                                <div class="col-sm-12">
+                                    <input name="last_name" type="text" class="form-control" placeholder="phone">
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <input type="email" class="form-control" placeholder="Email">
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" id="comment" placeholder="message"></textarea>
                             </div>
-                            <div class="col-sm-12">
-                                <input type="text" class="form-control" placeholder="Phone">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" id="comment" placeholder="Message"></textarea>
-                        </div>
-                        <button class="btn btn-block" type="submit">Send Now!</button>
+                            <button class="btn btn-block" type="submit">Send Now!</button>
                     </form>
                 </div>
             </div>

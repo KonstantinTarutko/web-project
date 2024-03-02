@@ -14,7 +14,6 @@
             <a href="/">Main page</a>
             <a href="{% url 'main:about' %}">About us</a>
             <a href="{% url 'main:contacts' %}">Contacts</a>
-            <a href="#appointment">Make an appointment</a>
             <a href="{% url 'articles:all' %}">Articles</a>
             {% if user.is_superuser %}
                 <a href="{% url 'articles:category' %}">Add category</a>
@@ -57,31 +56,29 @@
                         <form method="POST">
                             {% csrf_token %}
                             {{ form.as_p }}
-                            <button class="btn btn-secondary">
+                            <button type="button" class="btn btn-secondary">
                                 Propose new post
                             </button>
                         </form>
                     </div>
                 {% else %}
                     <h5>
-                        I'm sorry, but you did not sign in
+                        I'm sorry, but you did not sign in :(
                     </h5>
                     <br>
-                    <button>
+                    <button type="button" class="btn btn-secondary">
                         <a class="reg btn btn-secondary" href="{% url 'users:login' %}">
                             Sign in
                         </a>
                     </button>
-                    <button>
+                    <button type="button" class="btn btn-secondary">
                         <a class="reg btn btn-secondary" href="{% url 'users:registration' %}">
                             Sign up
                         </a>
                     </button>
-
                     <br>
                     <br>
-
-                    <button>
+                    <button type="button" class="btn btn-secondary">
                         <a href="{% url 'articles:all' %}" class="btn btn-secondary">
                             All articles
                         </a>

@@ -14,7 +14,6 @@
             <a href="/">Main page</a>
             <a href="{% url 'main:about' %}">About us</a>
             <a href="{% url 'main:contacts' %}">Contacts</a>
-            <a href="/#appointment">Make an appointment</a>
             <a href="{% url 'articles:all' %}">Articles</a>
             {% if user.is_superuser %}
                 <a href="{% url 'articles:add' %}">Add post</a>

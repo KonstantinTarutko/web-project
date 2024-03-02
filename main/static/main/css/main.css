@@ -131,6 +131,21 @@ label {
 	margin-right: 10px;
 }
 
+.about {
+    background-image: url("https://pixel-shot.com/get_image/i-7674400-0.JPG");
+    height: 550px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    background-color: #efebeb;
+}
+
+.aboutme {
+    margin-left: 650px;
+    padding-top: 7px;
+}
+
 .desc-info {                          /* background image in description */
     background: url('https://www.thoughtco.com/thmb/-gDES1wOdCc1jIGH5PfVMd9ShyE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/therapst-Image-Source-56a449a85f9b58b7d0d62bab.jpg');
     width: 100%;
@@ -268,6 +283,7 @@ label {
 .contact .content .info {
     margin-top: 30px;
 }
+
 .contact .content .info i {
     font-size: 30px;
     padding: 0;
@@ -325,22 +341,41 @@ label {
 .article-info {
     background-color:#e0d7d7;
     margin-top: 10px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+}
+
+.text-article {
+    display: grid;
+    place-items: center;
+    margin-top: 15px;
+}
+
+.text-article h3 {
+    margin-top: 20px;
 }
 
 .add-post {
-    background-color:#e0d7d7;
+    background-color:#e6d1d1;
     margin-top: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
 .articles-list {
-    background-color: #e0d7d7;
+    background-color: #ebeaea;
     margin-top: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+.articles-list .for-propose {
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.articles-list h4, .list-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .post-form {
@@ -349,13 +384,15 @@ label {
 }
 
 .main-list {
-    background-color: #e0d7d7;
-    width: 400px;
+    background-color: #ebeaea;
+    width: 700px;
     list-style: none;
+    margin-top: -10px;
+    padding: 30px;
 }
 
-.articles-list h4 {
-    margin-left: 35px;
+.main-list li {
+    margin-bottom: 20px;
 }
 
 .articles-list a {
@@ -372,8 +409,10 @@ label {
     text-decoration: none;
 }
 
-.for-propose {
-    margin-left: 20px;
+.adding {
+    display: grid;
+    place-items: center;
+    margin-bottom: 15px;
 }
 
 

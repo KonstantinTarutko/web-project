@@ -35,7 +35,7 @@ def sending_form(request):
             }
 
             send_mail(
-                'text',
+                'first form',
                 json.dumps(data),
                 't7est567@yandex.ru',
                 ['tarutko.konstantin@yandex.ru'],
@@ -63,16 +63,21 @@ def sending_second_form(request):
                 'phone': form.cleaned_data['phone'],
                 'message': form.cleaned_data['message']
             }
-            print(data)
 
             send_mail(
-                'test',
-                data,
+                'second form',
+                json.dumps(data),
                 't7est567@yandex.ru',
                 ['tarutko.konstantin@yandex.ru'],
                 fail_silently=False
             )
 
-            return redirect('main/contacts')
-        else:
-            return render(request, 'main', {'form': form})
+            return redirect('main')
+
+    else:
+        form = SecondForm()
+
+    context = {'form': form}
+    return render(request,
+                  'main/contacts.html',
+                  context)

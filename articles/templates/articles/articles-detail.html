@@ -14,7 +14,6 @@
             <a href="/">Main page</a>
             <a href="{% url 'main:about' %}">About us</a>
             <a href="{% url 'main:contacts' %}">Contacts</a>
-            <a href="#appointment">Make an appointment</a>
             {% if user.is_superuser %}
                 <a href="{% url 'articles:add' %}">Add post</a>
                 <a href="{% url 'articles:category' %}">Add category</a>
@@ -65,15 +64,15 @@
             <h3>{{ post.title }}</h3>
             <br>
 
-            <h5>Author: {{ post.author.username }}</h5>
-            <br>
-            {{ post.pub_data }}
-            <br>
-
             {{ post.body|safe }}
             <br>
             <br>
-            <form action="{% url 'articles:like-article' post.pk %}"
+            <h6 style="margin-left: 380px; margin-top: 50px;">Author: {{ post.author.username }}</h6>
+            <br>
+            <p style="margin-left: 425px; margin-top: -15px;">{{ post.pub_data }}</p>
+            <br>
+            <br>
+            <form style="margin-left: 545px; margin-top: -15px;" action="{% url 'articles:like-article' post.pk %}"
                   method="POST">
                 {% csrf_token %}
                 <button type="button" name="post_id" value="{{ post.id }}" class="btn btn-success">
@@ -82,19 +81,19 @@
             </form>
             <br>
 
-            <a href="{% url 'articles:all' %}" class="btn btn-secondary">Back</a>
+            <a style="margin-left: 380px; margin-top: -15px;" href="{% url 'articles:all' %}" class="btn btn-secondary">Back</a>
 
             <br>
             <br>
 
             {% if user.is_superuser %}
-                <button class="btn btn-secondary">
+                <button type="button" class="btn btn-secondary">
                     <a href="{% url 'articles:edit' post.pk %}" class="btn btn-secondary">
                         Edit post
                     </a>
                 </button>
-            &emsp;
-                <button class="btn btn-secondary">
+            <br>
+                <button style="margin-bottom: 20px;" type="button" class="btn btn-secondary">
                     <a href="{% url 'articles:delete' post.pk %}" class="btn btn-secondary">
                         Delete
                     </a>
